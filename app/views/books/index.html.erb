@@ -1,0 +1,16 @@
+<div class="u-margin-left-large">
+  <h1>Welcome to PageTurner!</h1>
+  <h3>Check out our books</h3>
+</div>
+<section>
+  <div>
+    <% @books.each do |book| %>
+      <div>
+        <h4><%= book.title %></h4><br />
+         <% book.authors.name do |author| %>
+          <%= link_to("Author(s): #{author.name}", author_path(author)) %><br />
+         <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>

@@ -6,10 +6,46 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.stripe.com/v3/"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <header>
+      <ul class="c-navigation">
+        <%= image_tag("open-book.png", :class => "u-margin-left-small") %>
+          <li class="c-navigation__item u-margin-left-small">
+            <a class="c-navigation__link c-navigation__link--active" href="/books">PageTurner</a>
+          </li>
+          <li class="c-navigation__item c-navigation__item--push-right">
+            <a class="c-navigation__link" href="/books">Books</a>
+          </li>
+          <li class="c-navigation__item">
+            <a class="c-navigation__link" href="/authors">Authors</a>
+          </li>          
+          <li class="c-navigation__item">
+            <a class="c-navigation__link u-margin-right-small" href="/profile">Profile</a>
+          </li>
+        </ul>
+    </header>
     <%= yield %>
+    <footer>
+      <ul class="c-navigation">
+        <%= image_tag("open-book.png", :class => "u-margin-left-small") %>
+          <li class="c-navigation__item u-margin-left-small">
+            <a class="c-navigation__link c-navigation__link--active" href="/books">PageTurner</a>
+          </li>
+          <li class="c-navigation__item c-navigation__item--push-right">
+            <a class="c-navigation__link" href="/books">Books</a>
+          </li>
+          <li class="c-navigation__item">
+            <a class="c-navigation__link" href="/authors">Authors</a>
+          </li>          
+          <li class="c-navigation__item">
+            <a class="c-navigation__link u-margin-right-small" href="/profile">Profile</a>
+          </li>
+        </ul>
+    </footer>
   </body>
 </html>
