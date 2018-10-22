@@ -1,5 +1,11 @@
-<%= form_for @user, url: {action: 'create', controller: 'users'} do |f| %>
-  Name: <%= f.text_field :name %><br />
-  Email: <%= f.text_field :email %>
-  <%= f.submit %>
-<% end %>
+<div class="c-grid c-grid--tiny">
+  <div class="c-grid__cell u-1/2--lap">
+    <div class="c-input">
+      <%= form_for @user, url: {action: 'create', controller: 'users'} do |f| %>
+       Name: <%= f.text_field :name %><br />
+       Email: <%= f.text_field :email %>
+       <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,15 +2,19 @@
   <h1>Welcome to PageTurner!</h1>
   <h3>Check out our books</h3>
 </div>
-<section>
-  <div>
-    <% @books.each do |book| %>
-      <div>
-        <h4><%= book.title %></h4><br />
-         <% book.authors.name do |author| %>
-          <%= link_to("Author(s): #{author.name}", author_path(author)) %><br />
-         <% end %>
-      </div>
-    <% end %>
+  <div class="c-grid c-grid--tiny">
+    <div class="c-grid__cell u-1/2--lap">
+      <% @books.each do |book| %>
+        <div class="c-input">
+          <% if book.cover.attached? %>
+          <%= image_tag book.cover.variant(resize: "100x100") %>
+          <% end %>
+          <h4><%= book.title %></h4>
+          <% book.authors.each do |author| %>
+           <%= link_to("Author(s): #{author.name}", author_path(author)) %><br />
+          <% end %>
+        </div>
+       <% end %>
   </div>
-</section>
+</div>
+

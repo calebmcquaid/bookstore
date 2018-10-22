@@ -1,15 +1,28 @@
-User.create!(name: "Amy", email: "test3@testemail.com", password: "testing1")
+authors = [
+    {name: "Sir Remy"},
+    {name: "Miss Dalek"},
+    {name: "Penny Lane"},
+    {name: "Zoe Hunts"},
+    {name: "Lucy pants"},
+  ]
 
-ron_rash = User.create!(name: "Ron Rash", email: "ron3@testemail.com", password: "testing1")
+  authors.each do |author|
+    Author.create!(name: author[:name])
+  end
 
-books = [
-  { title: "Serena", price: 15.99 },
-  { title: "One Foot in Eden", price: 24.99 },
-  { title: "Saints at the River", price: 24.99 },
-  { title: "Burning Bright", price: 12.99 }
-]
-books.each do |book|
-  Book.create!(title: book[:title], price: book[:price])
-end
+  books = [
+    { title: "All About Dogs",
+      description: "A dog is a mammal in the order Carnivora. Dogs were domesticated from wolves as recently as 15,000 years ago.",
+      price: 15.99
+    },
+    { title: "Dogs Are Life",
+      description: "It is estimated that for more than 12,000 years the dog has lived with humans as a hunting companion, protector and friend. A dog is one of the most popular pets in the world and has been referred to as 'mans best friend'.",
+      price: 25.99
+    }
+  ]
 
-ron_rash.books << Book.all
+  books.each do |book_attrs|
+    book = Book.new(book_attrs)
+    book.cover.attach(io: File.open(Rails.root.join('public/doge.png')), filename:"doge.png")
+    book.save!
+  end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :books
   resources :authors
   resources :styles
+  resources :charges
 
   get "profile", to: "users#show"
   put "profile", to: "users#update"

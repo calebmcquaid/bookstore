@@ -5,6 +5,8 @@ class Book < ApplicationRecord
   has_many :book_authors
   has_many :authors, through: :book_authors
 
+  has_one_attached :cover
+
   def stripe_amount
     (price * 100).to_i
   end

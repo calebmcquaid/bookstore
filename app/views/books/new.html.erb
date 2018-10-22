@@ -1,0 +1,12 @@
+<div class="c-grid c-grid--tiny">
+  <div class="c-grid__cell u-1/2--lap">
+    
+      <%= form_for @book, url: {action: 'create', controller: 'books'} do |f| %>
+        <div class="c-input">
+          Title: <%= f.text_field :title %><br />
+          Price: <%= f.text_field :price %><br />
+          Cover Pic: <%= f.file_field :cover, direct_upload: true %><br />
+      <%= f.submit %>
+    </div>
+
+      <% end %>
