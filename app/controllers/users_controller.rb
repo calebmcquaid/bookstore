@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    redirect_to( user_path, alert: "This is an admin function.") unless current_user.admin?
+    @users = User.all
+  end
+
   def update
   end
 end
