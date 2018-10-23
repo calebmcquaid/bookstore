@@ -1,0 +1,14 @@
+<div class="u-margin-left-large">
+  <h1>Welcome to PageTurner!</h1>
+  <h3>Check out this author!</h3>
+</div>
+  <div class="c-grid c-grid--tiny">
+    <div class="c-grid__cell u-1/2--lap">
+        <div class="c-input">
+          <h4><%= @author.name %></h4>
+          <% @author.books.each do |book| %>
+           <%= link_to("Book(s): #{book.title}", book_path(book)) %><br />
+          <% end %>
+        </div>
+  </div>
+</div>
