@@ -21,6 +21,8 @@ gem 'devise'
 gem 'stripe'
 
 gem 'image_processing', '~> 1.2'
+gem 'webpacker'
+gem 'react-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

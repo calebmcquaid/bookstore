@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   resources :books
   resources :authors
   resources :styles
-  resources :charges
+
+  get "charges", to: "charges#new"
+  post "charges", to: "charges#create"
 
   get "profile", to: "users#show"
   put "profile", to: "users#update"
   post "profile/new", to: "users#create"
+  get "admin", to: "users#index"
 
 end
